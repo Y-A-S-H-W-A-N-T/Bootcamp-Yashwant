@@ -1,0 +1,174 @@
+@import './variables.css';
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: var(--body-font-size, 1rem);
+    background-color: var(--background-color, #f4f4f4);
+    color: var(--text-color, #333);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color, #3498db);
+    color: white;
+    padding: var(--spacing);
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+
+h1 {
+    margin: 0;
+    font-size: var(--header-font, 2.5rem);
+}
+
+nav {
+    padding: var(--spacing);
+    color: white;
+    margin: var(--spacing) 0;
+}
+
+nav h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing);
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: var(--spacing) 0;
+    display: block;
+    padding: var(--spacing) 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--primary-color, #3498db);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing);
+    margin: var(--spacing);
+}
+
+.left-sidebar, .right-sidebar {
+    max-width: 20%;
+    padding: var(--spacing);
+}
+
+.main-content {
+    width: 60%;
+    padding: var(--spacing);
+    padding-bottom: 5%;
+}
+
+section {
+    margin-bottom: var(--spacing);
+}
+
+h2 {
+    color: var(--primary-color, #3498db);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing);
+}
+
+ol, ul {
+    padding-left: var(--spacing);
+}
+
+ol li, ul li {
+    margin-bottom: var(--spacing);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing);
+}
+
+th, td {
+    padding: var(--spacing);
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color, #3498db);
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--table-odd-row, #e0e0e0);
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: var(--spacing);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: var(--primary-color, #3498db);
+    color: white;
+    text-align: center;
+    padding: var(--spacing);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.dark-mode {
+    --primary-color: #2c3e50;
+    --secondary-color: #1abc9c;
+    --background-color: #1e1e1e;
+    --text-color: #ecf0f1;
+    --table-odd-row: #444;
+}
+
+.dark-mode body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark-mode header {
+    background-color: var(--primary-color);
+}
+
+.dark-mode nav a {
+    color: var(--text-color);
+}
+
+.dark-mode nav a:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.dark-mode .main-content {
+    background-color: #333;
+}
+
+.dark-mode th {
+    background-color: var(--primary-color);
+}
+
+.dark-mode tr:nth-child(odd) {
+    background-color: #555;
+}
+
+.dark-mode tr:nth-child(even) {
+    background-color: #333;
+}
