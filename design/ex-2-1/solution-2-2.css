@@ -1,0 +1,77 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: 'Merriweather', serif;
+}
+
+code {
+    font-family: 'Fira Mono', monospace;
+}
+
+.image-text {
+    font-size: 4rem;
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+
+.variable-font-demo p {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    transition: font-weight 0.3s ease;
+}
+
+.variable-font-demo p:hover {
+    font-weight: 700;
+}
+
+.drop-cap::first-letter {
+    font-size: 3em;
+    float: left;
+    margin-right: 0.1em;
+    line-height: 0.8;
+    color: #4a4a4a;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+.text-shadow {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.light-weight {
+    font-weight: 300;
+}
+
+.normal-weight {
+    font-weight: 400;
+}
+
+.bold-weight {
+    font-weight: 700;
+}

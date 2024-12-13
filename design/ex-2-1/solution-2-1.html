@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="solution-2-1.css">
+</head>
+<body>
+    <header>
+        <h1 class="bold-weight">My First Webpage (Bold Weight: 700)</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h2 class="normal-weight">Favorite Movies (Normal Weight: 400)</h2>
+                <ol class="light-weight">
+                    <li>Inception</li>
+                    <li>Interstellar</li>
+                    <li>The Hangover</li>
+                </ol>
+                <p>This list has Light Weight: 300</p>
+            </article>
+            <article>
+                <h2 class="normal-weight">Favorite Books (Normal Weight: 400)</h2>
+                <ul class="light-weight">
+                    <li>Harry Potter</li>
+                    <li>Three and half murders</li>
+                    <li>The tale of two cities</li>
+                </ul>
+                <p>This list has Light Weight: 300</p>
+            </article>
+            <aside>
+                <img src="https://wallpapers.com/images/high/interstellar-gargantua-endurance-art-94v9sfmioqr27djj.webp" alt="Interstellar cover" />
+            </aside>
+        </section>
+    </main>
+    <footer class="normal-weight">
+        <p>Contact: example@email.com (Normal Weight: 400)</p>
+    </footer>
+    
+    <script>
+        function changeBackgroundColor() {
+            const colors = ['rgba(20,0,0,0.5)', 'rgba(200,0,0,0.3)', 'rgba(0,20,0,0.3)', 'rgba(0,200,0,0.3)'];
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                document.body.style.backgroundColor = colors[currentIndex];
+                currentIndex = (currentIndex + 1) % colors.length;
+            }, 1000);
+        }
+        
+        changeBackgroundColor();
+    </script>
+</body>
+</html>

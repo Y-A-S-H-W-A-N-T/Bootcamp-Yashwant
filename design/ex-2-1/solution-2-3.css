@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'geist-thin';
+    src: url('./custom-fonts/GeistMono-Thin.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'geist-bold';
+    src: url('./custom-fonts/GeistMono-Bold.ttf') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'geist-ultra';
+    src: url('./custom-fonts/GeistMono-UltraBlack.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'geist-thin', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'geist-ultra', serif;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+.subtitle {
+    font-family: 'geist-bold', sans-serif;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.geist-regular {
+    font-family: 'geist-bold', sans-serif;
+    font-weight: normal;
+}
+
+.geist-medium {
+    font-family: 'geist-bold', sans-serif;
+    font-weight: 500;
+}
+
+.line-height-demo {
+    line-height: 2;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.letter-spacing-demo {
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.word-spacing-demo {
+    word-spacing: 0.2em;
+}
+
+.combined-demo {
+    font-family: 'geist-bold', sans-serif;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-size: 1.1em;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-left: 4px solid #3498db;
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}

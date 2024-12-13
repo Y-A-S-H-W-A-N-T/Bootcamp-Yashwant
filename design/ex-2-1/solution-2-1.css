@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h1, h2 {
+    font-family: 'Times New Roman', serif;
+}
+.light-weight {
+    font-weight: 300;
+}
+.normal-weight {
+    font-weight: 400;
+}
+.bold-weight {
+    font-weight: 700;
+}
+code {
+    font-family: 'Courier New', monospace;
+}
