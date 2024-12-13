@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make the body take full height and use flexbox for centering */
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #f4f4f4;
+}
+
+/* Container that holds all content */
+.container {
+  width: 80vw; /* 80% of the viewport width */
+  max-width: 1200px; /* Maximum width to avoid stretching on large screens */
+  min-height: 80vh; /* 80% of the viewport height */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+header h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Main content area styling */
+main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Left sidebar (navigation) */
+.left-sidebar {
+  width: 25%; /* Take 25% of available width */
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.left-sidebar h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.left-sidebar ul {
+  list-style-type: none;
+}
+
+.left-sidebar li {
+  margin-bottom: 10px;
+}
+
+.left-sidebar a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.left-sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content section */
+section {
+  width: 65%; /* Take 65% of available width */
+  flex-grow: 1;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Table for item list */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table caption {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+/* Right sidebar (navigation) */
+.right-sidebar {
+  width: 25%; /* Take 25% of available width */
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.right-sidebar h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.right-sidebar ul {
+  list-style-type: none;
+}
+
+.right-sidebar li {
+  margin-bottom: 10px;
+}
+
+.right-sidebar a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.right-sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+/* Image styling */
+aside img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Make the layout responsive on small screens */
+@media (max-width: 768px) {
+  main {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+  }
+
+  .left-sidebar, .right-sidebar {
+      width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  section {
+      width: 100%;
+  }
+}

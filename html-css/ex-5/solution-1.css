@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+      "header header header"
+      "sidebar-left main sidebar-right"
+      "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr; /* Adjust the column sizes */
+  grid-template-rows: auto 1fr auto; /* Adjust the row sizes */
+  min-height: 100vh; /* Full-height layout */
+  gap: 10px;
+}
+
+header {
+  grid-area: header;
+  background-color: orchid;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  grid-area: main;
+  background-color: #fdfdfd;
+  padding: 20px;
+}
+
+aside {
+  background-color: #f3f3f3;
+  padding: 20px;
+}
+
+aside:first-of-type {
+  grid-area: sidebar-left;
+}
+
+aside:last-of-type {
+  grid-area: sidebar-right;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Styling for elements */
+h1, h2 {
+  color: #333;
+}
+
+p, li {
+  color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: orchid;
+  color: white;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  padding: 8px;
+}

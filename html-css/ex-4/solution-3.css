@@ -1,0 +1,121 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(14px, 1.2vw, 18px); /* Fluid typography */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Fluid font size for header */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+/* Main Sections */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid */
+    gap: 2rem;
+    align-items: start;
+}
+
+section {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+section:hover {
+    background-color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Typography */
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Fluid subheader size */
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    margin-bottom: 1rem;
+}
+
+/* Ordered and Unordered Lists */
+ol,
+ul {
+    padding-left: 1.5rem;
+    list-style-position: inside;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: clamp(0.8rem, 1.2vw, 1rem); /* Fluid table text size */
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table caption {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Fluid caption size */
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Aside */
+aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+}
+
+aside img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Fluid footer text size */
+    background-color: #222;
+    color: #fff;
+}
+
+/* Advanced Responsiveness with Grid */
+main > section:nth-child(2n) {
+    background-color: #f0f0f0;
+}

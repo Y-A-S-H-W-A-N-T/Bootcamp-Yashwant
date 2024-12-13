@@ -1,0 +1,22 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --header-font: 2.5rem;
+    --body-font-size: 1rem;
+    --spacing: 1rem;
+    
+    --accent-color: var(--primary-color);
+    --border-color: var(--secondary-color);
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --table-odd-row: #e0e0e0;
+  } 
+
+  .dark-mode {
+    --primary-color: #2c3e50;
+    --secondary-color: var(--primary-color);
+    --background-color: #1e1e1e;
+    --text-color: #ecf0f1;
+    --table-odd-row: #444;
+}
+  

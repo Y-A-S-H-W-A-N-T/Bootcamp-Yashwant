@@ -1,0 +1,123 @@
+/* General reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Container grid setup */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "sidebar-left main sidebar-right"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr; /* Sidebar widths and main content width */
+    grid-template-rows: auto 1fr auto; /* Header, main, and footer heights */
+    gap: 20px;
+    min-height: 100vh; /* Full-height layout */
+}
+
+/* Header styles */
+header {
+    grid-area: header;
+    background-color: orchid;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+/* Main content styles */
+main {
+    grid-area: main;
+    background-color: #fdfdfd;
+    padding: 20px;
+    overflow-y: auto; /* Handle overflow content */
+    max-height: 70vh; /* Adjust height to prevent overflow */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar styles */
+aside {
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside:first-of-type {
+    grid-area: sidebar-left;
+}
+
+aside:last-of-type {
+    grid-area: sidebar-right;
+}
+
+/* Footer styles */
+footer {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar-left"
+            "sidebar-right"
+            "footer";
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    main, aside {
+        max-height: unset; /* Remove height restriction on smaller screens */
+    }
+}
+
+/* Styling for elements within the main content */
+h1, h2 {
+    color: #333;
+}
+
+p, li {
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+img {
+    height: 50%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+th {
+    background-color: orchid;
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+}

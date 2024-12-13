@@ -1,0 +1,98 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: clamp(90%, 800px, 1200px); /* Width adjusts between 800px and 1200px, with a fallback to 90% */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header */
+header h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Scales font size based on viewport width */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Main sections */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* Responsive font size for table text */
+}
+
+table th,
+table td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table caption {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Scales caption font size */
+    margin-bottom: 0.5rem;
+}
+
+/* Aside image */
+aside img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Responsive footer text */
+    background-color: #222;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    main > section {
+        flex: 2;
+    }
+
+    aside {
+        flex: 1;
+    }
+}
