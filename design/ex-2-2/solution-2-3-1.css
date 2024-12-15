@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+  }
+  
+  header.gradient-header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff6b6b);
+    color: white;
+  }
+  
+  .gradient-header h1, .gradient-header h2 {
+    margin: 0;
+  }
+  
+  /* Button Styles */
+  .button-container {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .gradient-button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: radial-gradient(circle, #6a11cb, #2575fc);
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .gradient-button.alternate {
+    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+  }
+  
+  .gradient-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .gradient-demo {
+    margin: 40px auto;
+    text-align: center;
+  }
+
+  section h2,p{
+    position: relative;
+    margin-left: 35%;
+  }
+  
+  .gradient-box {
+    width: 200px;
+    height: 100px;
+    margin: 10px auto;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .angle-45 {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  }
+  
+  .angle-90 {
+    background: linear-gradient(90deg, #fda1ec, #c2e9fb);
+  }
+  
+  .angle-180 {
+    background: linear-gradient(180deg, #ffecd2, #fcb69f);
+  }
+  
+  .gradient-circle {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .stops-1 {
+    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+  }
+  
+  .stops-2 {
+    background: radial-gradient(circle, #a1c4fd, #c2e9fb, #d4fc79);
+  }
+  
+  .stops-3 {
+    background: radial-gradient(circle, #ffecd2, #fcb69f, #ff9a9e, #fad0c4);
+  }  

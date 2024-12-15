@@ -1,0 +1,74 @@
+.palette-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    color: white;
+  }
+  
+  @media (max-width: 600px) {
+    .palette-header {
+      background-color: #85c1e9;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .palette-header {
+      background-color: #2874a6;
+    }
+  }
+  
+  .color-box {
+    width: 600px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin: 10px auto;
+    border-radius: 8px;
+  }
+  
+  .color-box.primary {
+    background-color: #3498db;
+  }
+  
+  .color-box.primary-tint {
+    background-color: #85c1e9;
+  }
+  
+  .color-box.primary-shade {
+    background-color: #2874a6;
+  }
+  
+  .color-box.secondary {
+    background-color: #e74c3c;
+  }
+  
+  .color-box.secondary-tint {
+    background-color: #f1948a;
+  }
+  
+  .color-box.secondary-shade {
+    background-color: #c0392b;
+  }
+  
+  @media (max-width: 600px) {
+    .color-box.primary {
+      background-color: #85c1e9;
+    }
+  
+    .color-box.secondary {
+      background-color: #f1948a;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .color-box.primary {
+      background-color: #2874a6;
+    }
+  
+    .color-box.secondary {
+      background-color: #c0392b;
+    }
+  }
+  

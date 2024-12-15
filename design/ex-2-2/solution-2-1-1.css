@@ -1,0 +1,41 @@
+@import url('./variable.css');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: rgb(var(--color-base));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+h1 {
+    color: rgb(var(--color-light));
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background-color: rgba(var(--color-base), 0.5);
+    border: 1px solid rgba(var(--color-light), 0.3);
+    box-shadow: 0 4px 6px rgba(var(--color-dark), 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+.card h2 {
+    color: rgb(var(--color-light));
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: rgba(var(--color-light), 0.8);
+    line-height: 1.6;
+}
