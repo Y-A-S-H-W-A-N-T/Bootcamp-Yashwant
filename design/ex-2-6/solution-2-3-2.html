@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Information Bureau</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .header-actions a {
+            margin-left: 1rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 2rem 0;
+        }
+        .press-release {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .press-release-meta {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .press-release h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        .press-release p {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .header-actions {
+                display: none;
+            }
+            .header-content {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="https://static.pib.gov.in/WriteReadData/specificdocs/photo/2021/aug/ph202183101.png" alt="logo" height="50" width="80">
+                <a href="#" class="logo">Press Information Bureau</a>
+                <nav>
+                    <ul>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Photos</a></li>
+                        <li><a href="#">Videos</a></li>
+                        <li><a href="#">Documents</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#" aria-label="Search">🔍</a>
+                    <a href="#" aria-label="Calendar">📅</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article class="press-release">
+                <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/PIC1RXEY.JPG" alt="conference" height="50%" width="100%">
+                <div class="press-release-meta">
+                    Posted On: 12 DEC 2024 7:39PM by PIB Delhi
+                </div>
+                <h2>9th India-Thailand Defence Dialogue held in New Delhi to explore new initiatives to further strengthen bilateral defence cooperation</h2>
+                <p>
+                    Both sides agreed for early establishment of Joint Working Group to effectively steer and monitor the cooperation in the areas of defence industry. Both sides also agreed to conduct Subject Matter Experts Exchange between Indian and the Thai Armed Forces to carry forward and institutionalise regular engagement in niche domains.
+                </p>
+                <p>
+                    The Indian co-chair highlighted the potential of domestic defence industry with capacity and capability to cooperate with the Royal Thai Armed Forces in its defence acquisition plans. Thailand appreciated the capability of Indian defence industry ecosystem and proposed exploring possibilities for co-design, co-production and co-development in the field of defence industry.
+                </p>
+                <p>
+                    Earlier in the day, the Deputy Permanent Secretary laid a wreath and paid homage to the fallen heroes at National War Memorial, New Delhi. The Thailand delegation also visited National Museum and paid respects to the Holy relics of Lord Buddha placed at Museum.
+                    As part of the visit, the Thailand delegation will visit DRDO headquarters and discuss ways to enhance defence industrial capabilities by cooperation in defence research and joint production.
+                </p>
+            </article>
+
+            <article class="press-release">
+                <img src="https://static.pib.gov.in/WriteReadData/userfiles/image/PIC2FGIB.JPG" alt="" height="50%" width="100%">
+                <div class="press-release-meta">
+                    December 18, 2023 | Ministry of Environment, Forest and Climate Change
+                </div>
+                <h2>Government Launches Environmental Protection Campaign</h2>
+                <p>
+                    A nationwide environmental protection campaign was launched today to address climate change concerns and promote sustainable development.
+                </p>
+                <p>
+                    The campaign will include tree plantation drives, waste management programs, and public awareness initiatives.
+                </p>
+                <p>
+                    Local authorities and civil society organizations will be key partners in implementing this campaign at the grassroots level.
+                </p>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

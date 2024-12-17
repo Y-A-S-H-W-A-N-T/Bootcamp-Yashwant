@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+.icon {
+    font-size: 100px;
+    margin: 20px;
+    color: #e96bdf;
+}
+.icon:hover {
+    color: #000000;
+    transition: 0.3s ease-in-out;
+}
+
+.icons-box {
+    display: flex;
+    margin-top: 20%;
+    justify-content: center;
+}

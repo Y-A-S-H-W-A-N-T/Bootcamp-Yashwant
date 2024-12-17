@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive and Optimized Images</title>
+    <link rel="stylesheet" href="solution-2-3.css">
+</head>
+<body>
+    <h1>Responsive Images with Lazy Loading</h1>
+    <p>
+        The following image uses the <code>&lt;picture&gt;</code> element to load different resolutions
+        based on device size and optimizes loading with lazy loading.
+    </p>
+    <p>
+        The browser will automatically choose the best image based on the screen size. The image also
+        loads lazily to improve performance.
+    </p>
+    <div class="image-container">
+        <picture>
+            <source 
+                srcset="image2.jpg" 
+                media="(min-width: 1200px)"
+            >
+            <source 
+                srcset="image3.jpg" 
+                media="(min-width: 768px)"
+            >
+            <source 
+                srcset="image1.png" 
+            >
+            <img 
+                src="image1.png" 
+                alt="Beautiful Landscape"
+                loading="lazy"
+            >
+            
+        </picture>
+    </div>
+</body>
+</html>

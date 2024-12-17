@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #d85252;
+    padding: 10px 20px;
+}
+
+/* Nav items */
+.nav-item {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    margin: 0 15px;
+}
+
+/* Icon styles */
+.nav-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Label styles */
+.nav-label {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Hover effect */
+.nav-item:hover {
+    color: #000000;
+    transition: 0.5s;
+}
+
+svg {
+    fill: #d85252;
+}
+
+svg:hover {
+    fill: #000000;
+    transition: 0.5s;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.button-item {
+    margin: 0 15px;
+    display: inline;
+    justify-content: center;
+    text-align: center;
+}
+
+.button-label {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #d85252;
+    text-transform: uppercase;
+}

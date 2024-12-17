@@ -1,0 +1,12 @@
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8%;
+    margin: 2%;
+}
+
+.images {
+    height: 20%;
+    width: 20%;
+    display: flex;
+}

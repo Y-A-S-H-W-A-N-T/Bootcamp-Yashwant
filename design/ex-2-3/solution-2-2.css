@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.icons-grid {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 40px; /* Space between Font Awesome and SVG sections */
+    margin: 5% auto;
+    text-align: center;
+}
+
+.icons, .svgs {
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center items */
+    gap: 30px; /* Space between icons */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+.icon {
+    font-size: 100px;
+    color: #f07ff0;
+    transition: color 0.3s ease-in-out;
+}
+
+.icon:hover {
+    color: #c615cc;
+    cursor: pointer;
+}
+
+.svg, .svg2 {
+    width: 100px;
+    height: 100px;
+    transition: fill 0.3s ease-in-out;
+    cursor: pointer;
+    fill: black;
+    border-radius: 50%;
+}
+
+.svg:hover, .svg2:hover {
+    fill: #e84f4f;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+    <link rel="stylesheet" href="solution-2-1.css">
+</head>
+<body>
+    <p>ABOUT: Showcasing "img" tag in html with few css styling, "alt" attribute and a placeholder image if the image fails to load up.</p>
+    <div class="images">
+        <img src="image1.png" alt="crysis"
+            onerror="this.onerror=null; this.src='https://picsum.photos/id/237/200/300';"
+        >
+        <img src="image2.jpg" alt="husky"
+            onerror="this.onerror=null; this.src='https://picsum.photos/id/257/200/300';"
+        >
+        <img src="image3.jpg" alt="z900"
+            onerror="this.onerror=null; this.src='https://picsum.photos/id/232/200/300';"
+        >
+    </div>
+</body>
+</html>
