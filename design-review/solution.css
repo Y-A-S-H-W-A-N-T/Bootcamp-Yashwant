@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+.card.expanded {
+    width: 400px;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.name {
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+.rating {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.review {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    font-family: cursive;
+}
+.button {
+    align-self: flex-end;
+    background-color: rgb(69, 214, 243);
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace  ;
+}
+.button:hover {
+    background-color: rgb(12, 214, 255);
+}
+.details {
+    display: none;
+    margin-top: 15px;
+}
+.details.visible {
+    display: block;
+    background-color: rgb(140, 220, 236);
+    color: black;
+    padding: 3%;
+    border: 2px solid rgb(255, 2, 247);
+    font-family: 'Courier New', Courier, monospace;
+}
+.details ol {
+    margin: 0;
+    padding-left: 20px;
+}
+.readmore {
+    float: right;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 2%;
+    border-radius: 15px;
+}
+
+.view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.view-more-btn i {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.view-more-btn:hover i {
+    transform: translateX(4px);
+}
