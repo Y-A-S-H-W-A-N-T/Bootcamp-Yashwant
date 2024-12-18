@@ -1,0 +1,16 @@
+{
+  "name": "math-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI for math operations",
+  "main": "index.js",
+  "bin": {
+    "math-cli": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

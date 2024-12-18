@@ -1,0 +1,9 @@
+app:
+  name: "Bootcamp"
+  env: "development"
+  port: 3000
+logging:
+  level: "debug"  # Options could be 'debug', 'info', 'warn', 'error'
+functions:
+  sin: "./functions/sin.js"
+  cos: "./functions/cos.js"

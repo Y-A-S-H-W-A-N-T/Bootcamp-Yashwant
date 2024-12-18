@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --card-background: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            color: #d43e3e;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            border-left: 4px solid red;
+            border-right: 4px solid red;
+            width: 65%;
+            margin-left: auto;
+            margin-right: auto;        
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .level {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .note-card {
+            background-color: var(--card-background);
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .task {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: rgb(69, 68, 68);
+        }
+
+        .process {
+            margin-bottom: 1rem;
+        }
+
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .code {
+            background-color: rgb(199, 194, 194);
+            padding-left: 2px;
+            padding-right: 2px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Debugging (debug)</h1>
+        </header>
+        <div class="task">Use the <code class="code">debug</code> package for selective debugging in multi-module scenarios.</div>
+
+        <main>
+            <article class="note-card">
+                <div class="level">Level 1</div>
+                <div class="process">
+                    <p>
+                        Problem Description: 1. Install debug and set up a namespace for debugging. 2. Use the debug function to log messages in a single module.
+                    </p>
+                </div>
+                <img src="1.jpeg" height="20" width="100%" alt="HTML Structure Screenshot" class="screenshot">
+            </article>
+
+            <article class="note-card">
+                <div class="level">Level 2</div>
+                <div class="process">
+                    <p>
+                        Problem Description: 1. Extend the program with multiple modules, each having its own debug namespace. 2. Use environment variables to selectively enable debugging for specific modules.
+                    </p>
+                </div>
+                <img src="2.jpeg" alt="CSS Styling Screenshot" class="screenshot">
+            </article>
+
+            <article class="note-card">
+                <div class="level">Level 3</div>
+                <div class="process">
+                    <p>
+                        Problem Description: 1. Combine debug with winston for structured debugging and logging. 2. Use both tools to debug and log a complex program scenario. For the complex program, Enhance the compute program by making it interactive program.
+                    </p>
+                </div>
+                <img src="3.jpeg" alt="Responsive Design Screenshot" class="screenshot">
+                <img src="4.jpeg" alt="Responsive Design Screenshot" class="screenshot">
+            </article>
+        </main>
+    </div>
+</body>
+</html>

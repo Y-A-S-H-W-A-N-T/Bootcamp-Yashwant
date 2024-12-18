@@ -1,0 +1,7 @@
+app:
+  port: 3001
+  env: "development"
+database:
+  host: "localhost"
+  port: 27017
+  db_name: "dev_database"

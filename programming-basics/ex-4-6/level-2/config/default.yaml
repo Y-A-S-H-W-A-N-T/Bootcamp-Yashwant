@@ -1,0 +1,8 @@
+app:
+  name: "Programming Basics"
+  port: 3000
+  env: "development"
+database:
+  host: "localhost"
+  port: 27017
+  db_name: "Bootcamp"

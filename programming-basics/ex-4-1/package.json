@@ -1,0 +1,22 @@
+{
+  "name": "ex-3-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon solution.js",
+    "dev": "DEBUG=* nodemon index.js",
+    "prestart": "shx test -d node_modules || npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "shx": "^0.3.4"
+  },
+  "type": "module"
+}
