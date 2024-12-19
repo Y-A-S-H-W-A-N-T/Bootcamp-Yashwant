@@ -21,7 +21,7 @@
             box-sizing: border-box;
         }
 
-        body {
+        .main {
             font-family: 'Poppins', sans-serif;
             background-color: var(--background-color);
             display: flex;
@@ -32,6 +32,7 @@
         }
 
         .container {
+            margin-top: 50px;
             display: flex;
             width: 70%;
             justify-content: center;
@@ -133,6 +134,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        .git {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            cursor: pointer;
+        }
+
+        .git a{
+            text-decoration: none;
+            border-bottom: 5px solid black;
+            padding-bottom: 5px;
+            border-radius: 100%;
+        }
+
+
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -145,79 +162,84 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="icon"><i class="fab fa-html5 icon html-icon fa-bounce"></i></div>
-                    <h2>html-css</h2>
-                    Day - 1
-                </div>
-                <div class="card-back">
-                    <p>Day - 1</p>
-                    <p>Exercise with plain html and css</p>
-                    <a href="./html-css/index.html" target="_blank" class="btn">View</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="icon"><i class="fa-solid fa-pen-ruler fa-bounce" style="color: #B197FC;"></i></div>
-                    <h2>design</h2>
-                    Day - 2
-                </div>
-                <div class="card-back">
-                    <p>Day - 2</p>
-                    <p>Design elements.</p>
-                    <a href="./design/index.html" class="btn">View</a>
+    <div class="main">
+        <nav class="git">
+            <a href="https://github.com/Y-A-S-H-W-A-N-T/Bootcamp-Yashwant" target="_blank"><i class="fa-brands fa-github fa-bounce fa-2xl"></i></a>
+        </nav>
+        <div class="container">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon"><i class="fab fa-html5 icon html-icon fa-bounce"></i></div>
+                        <h2>html-css</h2>
+                        Day - 1
+                    </div>
+                    <div class="card-back">
+                        <p>Day - 1</p>
+                        <p>Exercise with plain html and css</p>
+                        <a href="./html-css/index.html" target="_blank" class="btn">View</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="icon"><i class="fa-solid fa-star-half-stroke fa-rotate-270 fa-bounce" style="color: #ff2ebd;"></i></div>
-                    <h2>design-review</h2>
-                    Day - 3
-                </div>
-                <div class="card-back">
-                    <p>Day - 3</p>
-                    <p>Review of the design</p>
-                    <p>Contains reviews of each person</p>
-                    <a href="./design-review/solution.html" class="btn">View</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="icon"><i class="fa-solid fa-book fa-bounce" style="color: #81f15e;"></i></div>
-                    <h2>programming-basics</h2>
-                    Day - 4
-                </div>
-                <div class="card-back">
-                    <p>Day - 4</p>
-                    <p>Basic js&ts programming</p>
-                    <a href="./programming-basics/index.html" class="btn">View</a>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon"><i class="fa-solid fa-pen-ruler fa-bounce" style="color: #B197FC;"></i></div>
+                        <h2>design</h2>
+                        Day - 2
+                    </div>
+                    <div class="card-back">
+                        <p>Day - 2</p>
+                        <p>Design elements.</p>
+                        <a href="./design/index.html" class="btn">View</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="icon"><i class="fa-solid fa-code fa-bounce"></i></div>
-                    <h2>front-end-programming</h2>
-                    Day - 5
-                </div>
-                <div class="card-back">
-                    <p>Day - 5</p>
-                    <p>We have already completed HTML, CSS, JavaScript, and TypeScript. Now, we will bring all of them together and introduce you to modern tools and best practices.</p>
-                    <a href="./front-end-programming/index.html" class="btn">View</a>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon"><i class="fa-solid fa-star-half-stroke fa-rotate-270 fa-bounce" style="color: #ff2ebd;"></i></div>
+                        <h2>design-review</h2>
+                        Day - 3
+                    </div>
+                    <div class="card-back">
+                        <p>Day - 3</p>
+                        <p>Review of the design</p>
+                        <p>Contains reviews of each person</p>
+                        <a href="./design-review/solution.html" class="btn">View</a>
+                    </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon"><i class="fa-solid fa-book fa-bounce" style="color: #81f15e;"></i></div>
+                        <h2>programming-basics</h2>
+                        Day - 4
+                    </div>
+                    <div class="card-back">
+                        <p>Day - 4</p>
+                        <p>Basic js&ts programming</p>
+                        <a href="./programming-basics/index.html" class="btn">View</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon"><i class="fa-solid fa-code fa-bounce"></i></div>
+                        <h2>front-end-programming</h2>
+                        Day - 5
+                    </div>
+                    <div class="card-back">
+                        <p>Day - 5</p>
+                        <p>We have already completed HTML, CSS, JavaScript, and TypeScript. Now, we will bring all of them together and introduce you to modern tools and best practices.</p>
+                        <a href="./front-end-programming/index.html" class="btn">View</a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-        
     </div>
 
     <script>
