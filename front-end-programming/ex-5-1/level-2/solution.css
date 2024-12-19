@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.highlight {
+    background-color: #fffae6;
+    color: #333;
+    border: 2px solid #ffd700;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    color: orchid;
+    border: 2px solid rgb(215, 117, 212);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d749e1;
+    color: white;
+}
+
+.info {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#addStudent {
+    float: right;
+}

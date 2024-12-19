@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - AG Grid</title>
+    
+    <!-- AG Grid Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.1/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.1/styles/ag-theme-alpine.css">
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #4b0082;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .file-upload {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            color: #fd3bea ;
+            border: 2px solid #fd3bea;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d660c8;
+            color: white;
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        #fileName {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .grid-container {
+            height: 500px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .ag-theme-alpine {
+            border-radius: 12px;
+        }
+
+        .ag-header {
+            background-color: #e159c6;
+            color: white;
+            font-weight: bold;
+        }
+
+        .ag-row {
+            transition: background-color 0.2s;
+        }
+
+        .ag-row:hover {
+            background-color: #0b0b0b;
+        }
+
+        .ag-cell {
+            font-size: 14px;
+            color: #bb2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Students</h1>
+        
+        <div class="action-buttons">
+            <div class="file-upload">
+                <input type="file" id="fileInput" accept=".csv">
+                <button class="btn" onclick="document.getElementById('fileInput').click()">
+                    Upload CSV
+                </button>
+            </div>
+            
+            <button id="addStudentBtn" class="btn">Add Student</button>
+        </div>
+
+        <div id="studentsGrid" class="grid-container ag-theme-alpine"></div>
+    </div>
+
+    
+    <script>
+        // AG Grid initialization and configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            const gridOptions = {
+                columnDefs: [
+                    { 
+                        field: 'id', 
+                        headerName: 'ID', 
+                        sortable: true, 
+                        filter: true 
+                    },
+                    { 
+                        field: 'name', 
+                        headerName: 'Name', 
+                        sortable: true, 
+                        filter: true 
+                    },
+                    { 
+                        field: 'age', 
+                        headerName: 'Age', 
+                        sortable: true, 
+                        filter: true 
+                    },
+                    { 
+                        field: 'grade', 
+                        headerName: 'Grade', 
+                        sortable: true, 
+                        filter: true,
+                        cellStyle: params => {
+                            // Highlight A grade rows
+                            return params.value === 'A' 
+                                ? { backgroundColor: '#e6f3ff', fontWeight: 'bold' }
+                                : null;
+                        }
+                    }
+                ],
+                defaultColDef: {
+                    flex: 1,
+                    minWidth: 100,
+                    resizable: true,
+                },
+                rowData: [],
+                pagination: true,
+                paginationPageSize: 10
+            };
+
+            // Create grid
+            const gridDiv = document.querySelector('#studentsGrid');
+            const grid = new agGrid.Grid(gridDiv, gridOptions);
+
+            // File input handler
+            const fileInput = document.getElementById('fileInput');
+            const fileNameSpan = document.getElementById('fileName');
+
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                fileNameSpan.textContent = file ? file.name : 'No file selected';
+
+                if (file) {
+                    // Use PapaParse to read CSV
+                    Papa.parse(file, {
+                        complete: function(results) {
+                            // Skip header row and map CSV data
+                            const data = results.data.slice(1).map(row => ({
+                                id: row[0],
+                                name: row[1],
+                                age: row[2],
+                                grade: row[3]
+                            }));
+
+                            // Update grid data
+                            gridOptions.api.setRowData(data);
+                        },
+                        header: false // We're manually handling headers
+                    });
+                }
+            });
+
+            // Add student button
+            const addStudentBtn = document.getElementById('addStudentBtn');
+            addStudentBtn.addEventListener('click', function() {
+                const newStudent = {
+                    id: gridOptions.api.getDisplayedRowCount() + 1,
+                    name: `New Student ${gridOptions.api.getDisplayedRowCount() + 1}`,
+                    age: Math.floor(Math.random() * 10) + 18,
+                    grade: String.fromCharCode(65 + Math.floor(Math.random() * 5))
+                };
+
+                gridOptions.api.applyTransaction({ add: [newStudent] });
+            });
+
+            // Sample initial data
+            const initialData = [
+                { id: 1, name: 'John Doe', age: 18, grade: 'A' },
+                { id: 2, name: 'Jane Smith', age: 19, grade: 'B' },
+                { id: 3, name: 'Mike Johnson', age: 20, grade: 'A' },
+                { id: 4, name: 'Emily Brown', age: 17, grade: 'C' }
+            ];
+
+            // Set initial data
+            gridOptions.api.setRowData(initialData);
+        });
+        </script>
+        <!-- Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.1/dist/ag-grid-community.noStyle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single-File Application</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-... (integrity hash)"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <h1>Student Table</h1>
+    <button id="changeFont">Change Table Font</button>
+    <button id="addStudent"><i class="fas fa-user-plus"></i> Add Student</button>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+            <td>
+                1
+            </td>
+            <td>
+                Yashwant
+            </td>
+            <td>
+                21
+            </td>
+            <td>
+                B
+            </td>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div id="browserInfo" class="info"></div>
+
+    <script>
+        document.getElementById('addStudent').addEventListener('click', () => {
+            const tableBody = document.querySelector('#studentTable tbody');
+            const newRow = document.createElement('tr');
+            newRow.classList.add('highlight');
+
+            newRow.innerHTML = `
+                <td>1</td>
+                <td>John Doe</td>
+                <td>18</td>
+                <td>A</td>
+            `;
+
+            tableBody.appendChild(newRow);
+        });
+        document.getElementById('changeFont').addEventListener('click', () => {
+            const link = document.createElement('link');
+            link.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap';
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
+            document.getElementById('studentTable').style.fontFamily = 'Roboto, sans-serif';
+        });
+
+        const browserInfoDiv = document.getElementById('browserInfo');
+        const browserInfo = `
+            <p><strong>Browser Name:</strong> ${navigator.appName}</p>
+            <p><strong>Browser Version:</strong> ${navigator.appVersion}</p>
+            <p><strong>Window Dimensions:</strong> ${window.innerWidth} x ${window.innerHeight}</p>
+            <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+        `;
+        browserInfoDiv.innerHTML = browserInfo;
+
+        window.addEventListener('resize', () => {
+            browserInfoDiv.innerHTML = `
+                <p><strong>Browser Name:</strong> ${navigator.appName}</p>
+                <p><strong>Browser Version:</strong> ${navigator.appVersion}</p>
+                <p><strong>Window Dimensions:</strong> ${window.innerWidth} x ${window.innerHeight}</p>
+                <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
