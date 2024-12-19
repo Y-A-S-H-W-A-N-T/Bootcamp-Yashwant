@@ -55,23 +55,27 @@ document.addEventListener("DOMContentLoaded", () => {
               : { label: "High", color: "green" };
   
           return `
-          <div class="song-card">
-            <h3>${song.track_name || 'Untitled'}</h3>
-            <p><strong>Artist:</strong> ${song.track_artist || 'Unknown Artist'}</p>
-            <p><strong>Duration:</strong> ${formatDuration(song.duration_ms || 0)}</p>
-            <p><strong>Popularity:</strong> 
-              <span style="color: ${popularityCategory.color}; font-weight: bold;">
-                ${popularityCategory.label}
-              </span>
-            </p>
-            <p><strong>Album:</strong> ${song.track_album_name || 'Unknown Album'}</p>
-            <p><strong>Genre:</strong> ${song.playlist_genre || 'Unknown Genre'}</p>
-            ${song.track_id ? `
-              <a href="https://open.spotify.com/track/${song.track_id}" target="_blank" class="listen-link">
-                Listen on Spotify
-              </a>
-            ` : ''}
-          </div>`;
+            <div class="song-card">
+                <h3>${song.track_name || 'Untitled'}</h3>
+                <p>by <strong>${song.track_artist || 'Unknown Artist'}</strong></p>
+                <p><strong>Album:</strong> ${song.track_album_name || 'Unknown Album'}</p>
+                <p><strong>Popularity:</strong> 
+                <span style="color: ${popularityCategory.color}; font-weight: bold;">
+                    ${popularityCategory.label}
+                </span>
+                </p>
+                <p class="genre"><strong>Genre:</strong> ${song.playlist_genre || 'Unknown Genre'}</p>
+
+                <div class="bottom-buttons">
+                    <p><strong><i class="fa-solid fa-regular fa-clock fa-beat" style="color: #1db954;"></i></strong> ${formatDuration(song.duration_ms || 0)}</p>
+                    ${song.track_id ? `
+                    <a href="https://open.spotify.com/track/${song.track_id}" target="_blank" class="listen-link">
+                        Play <strong><i class="fa-solid fa-regular fa-play" style="color: #1db954;"></i></strong>
+                    </a>
+                    ` : ''}
+                </div>
+            </div>
+            `;
         })
         .join("");
     }
