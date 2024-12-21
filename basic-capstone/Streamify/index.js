@@ -24,13 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // for loading and displaying songs from the imported json file
     async function loadSongs() {
+      const loadingIndicator = document.getElementById("loading");
       try {
+        // Show the loading indicator
+        loadingIndicator.style.display = "block";
+    
         const response = await fetch("/spotify_songs.json");
         songs = await response.json();
+    
+        // Hide the loading indicator once data is loaded
+        loadingIndicator.style.display = "none";
+    
         const filtered = filterSongs();
         renderSongs(filtered);
         renderPagination(filtered);
       } catch (error) {
+        // Hide the loading indicator if there is an error
+        loadingIndicator.style.display = "none";
         console.error("Failed to load songs:", error);
         songList.innerHTML = '<p style="color: red;">Error loading songs. Please try again later.</p>';
       }
