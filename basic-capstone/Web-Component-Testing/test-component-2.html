@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #a8c0ff, #3f4c6b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #333;
+    }
+
+    /* Header styles */
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #4CAF50;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    /* Description styling */
+    p {
+      font-size: 18px;
+      color: #555;
+      text-align: center;
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    /* Custom weather component container */
+    weather-component {
+      padding: 30px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Temperature styling */
+    .temperature {
+      font-size: 48px;
+      font-weight: 800;
+      margin-top: 10px;
+      color: #4CAF50;
+    }
+
+    /* Description of weather condition */
+    .description {
+      font-size: 18px;
+      color: #777;
+    }
+
+    /* Weather icon */
+    .weather-icon {
+      width: 80px;
+      height: 80px;
+      margin-top: 15px;
+    }
+
+    /* Form container for city input */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    /* Input field styling */
+    .city-input {
+      width: 70%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: 2px solid #4CAF50;
+      margin-right: 10px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    /* Focus effect for input field */
+    .city-input:focus {
+      border-color: #45a049;
+    }
+
+    /* Button styling */
+    .submit-button {
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 120px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      padding: 12px;
+    }
+
+    /* Hover effect for button */
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <p>Welcome to our weather app. Find out the current weather in any city. Just enter the city name, and we’ll provide you with accurate weather details.</p>
+
+  <!-- Weather Component -->
+  <weather-component></weather-component>
+
+  <!-- Import the custom weather component script -->
+  <script src="../web-component/solution.js"></script>
+
+</body>
+</html>
