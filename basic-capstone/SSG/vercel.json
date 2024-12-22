@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "http://img5a.flixcart.com/:path*",
+      "destination": "https://img5a.flixcart.com/:path*",
+      "permanent": true
+    }
+  ]
+}
