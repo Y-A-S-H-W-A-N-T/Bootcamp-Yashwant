@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #2d3748;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .highlight {
+            color: #FF6347;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 5px;
+        }
+        .task {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .task p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>NOTES</h1>
+
+    <div class="section">
+        <h2>Exercise - 3: SSG (Static Site Generation)</h2>
+        <div class="task">
+            <h3>Approach</h3>
+            <ol>
+                <li>Look for a fitting data setfrom kaggle</li>
+                <li>Convert csv to JSON using a tool from the browser</li>
+                <li>Setup project environment</li>
+                <li>Load and show data on the website from the imported JSON file</li>
+                <li>Add search functionalities</li>
+                <li>Use Fuse.js for the search functionaity</li>
+                <li>Select fields which would fit for filter</li>        
+                <li>Good looing UI/UX for the client</li>        
+            </ol>
+            <h3>Handling Large Catalogs</h3>
+            <ol>
+                <li>One approach can be dividing the Catalogs into categories and storing it separately</li>     
+                <li>Fetching and displaying the categories according to the user's filter option and likings.</li>     
+            </ol>
+        </div>
+        <div class="section">
+            <h2>Website</h2>
+            <p><a href="https://spotify-research.netlify.app/">Shop List</a></p>
+        </div>
+        <div class="section">
+            <h2>UI/UX</h2>
+            <img src="screenshots/1.jpeg" alt="ss" class="screenshot">
+            <img src="screenshots/2.jpeg" alt="ss" class="screenshot">
+            <img src="screenshots/3.jpeg" alt="ss" class="screenshot">
+        </div>
+        <div class="section">
+            <h2>Individual Products</h2>
+            <img src="screenshots/4.jpeg" alt="ss" class="screenshot">
+        </div>
+        <div class="section">
+            <h2>CSV DATA (Products Data)</h2>
+            <img src="screenshots/5.jpeg" alt="ss" class="screenshot">
+        </div>
+        <div class="task">
+            <h3>LLM Links</h3>
+            <ul>
+                <li><a href="https://chatgpt.com/share/67687d18-1510-8013-87ca-78fe5708971e">Chatgpt</a></li>
+                <li><a href="https://v0.dev/chat/MNxUFi2StGa?b=b_VS5QthHoqO4">Vercel 0</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
