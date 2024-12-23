@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchContainer {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.searchInput {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 50px 0 0 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.searchInput:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.searchButton {
+  background-color: #fff;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+  background-color: #f0f0f0;
+}
+
+.loading, .error {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.weatherInfo {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cityName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.weatherMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.weatherIcon {
+  width: 80px;
+  height: 80px;
+  margin-right: 1rem;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tempC {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.tempF {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.condition {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.weatherDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.detail svg {
+  margin-right: 0.5rem;
+}
