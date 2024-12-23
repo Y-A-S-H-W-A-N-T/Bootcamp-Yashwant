@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serverless Web Hosting Design Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            line-height: 1.8;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Design Document: Serverless Web Hosting Solution</h1>
+    <p>How to Host a Website Without a Server and Meet Performance Demands</p>
+</header>
+
+<section>
+    <h2>1. Introduction</h2>
+    <p>The goal of this document is to demonstrate the feasibility of hosting a dynamic website without relying on traditional server infrastructure. We aim to reduce costs, improve scalability, and enhance the overall performance of the platform using serverless technologies. This proposal is ideal for large-scale eCommerce platforms like Flipkart or Amazon, seeking to optimize their operational efficiency.</p>
+</section>
+
+<section>
+    <h2>2. Overview of Serverless Web Hosting</h2>
+    <p>Serverless hosting refers to utilizing cloud-based services that manage infrastructure automatically, removing the need for dedicated servers. With serverless platforms, such as AWS Lambda, Google Cloud Functions, and Cloudflare Workers, we can run backend code, serve static assets, and scale resources based on demand without provisioning or maintaining servers.</p>
+
+    <h3>How It Works:</h3>
+    <ul>
+        <li><span class="highlight">Static Content Hosting:</span> HTML, CSS, and JavaScript files are served directly from a Content Delivery Network (CDN) like Amazon S3 or Netlify.</li>
+        <li><span class="highlight">Backend Functions:</span> Serverless functions handle API requests, business logic, and data processing in response to user interactions.</li>
+        <li><span class="highlight">Scalability:</span> Serverless platforms auto-scale based on traffic, meaning they can handle sudden spikes without manual intervention.</li>
+        <li><span class="highlight">Reduced Overhead:</span> No server management is required. The cloud provider takes care of infrastructure maintenance, security, and scaling.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3. Performance and Capacity Management</h2>
+    <p>Even with reduced functionality compared to a fully server-based solution, serverless platforms can still meet high performance and capacity demands for eCommerce platforms like Flipkart or Amazon.</p>
+
+    <h3>Performance Considerations:</h3>
+    <ul>
+        <li><span class="highlight">Low Latency:</span> CDNs and serverless platforms reduce latency by delivering content from geographically distributed servers closest to the user.</li>
+        <li><span class="highlight">Edge Computing:</span> Use edge functions to offload dynamic computation closer to users, improving response times.</li>
+        <li><span class="highlight">Auto-Scaling:</span> Serverless functions scale in real time to accommodate increasing traffic without performance degradation.</li>
+        <li><span class="highlight">Caching:</span> Frequently accessed content can be cached at the edge, reducing backend load and improving response times.</li>
+    </ul>
+
+    <h3>Capacity Management at Reduced Limits:</h3>
+    <ul>
+        <li><span class="highlight">Usage-Based Pricing:</span> Pay only for the exact amount of resources consumed, making it cost-effective for varying levels of traffic.</li>
+        <li><span class="highlight">Traffic Shaping:</span> Use rate limiting and throttling to control excessive traffic spikes that may overwhelm serverless resources.</li>
+        <li><span class="highlight">Cold Start Mitigation:</span> Implement warm-up strategies to minimize cold start latency of serverless functions, ensuring smooth performance during peak times.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>4. Prototype Implementation</h2>
+    <p>For this prototype, we will showcase a simple eCommerce homepage hosted on a serverless platform, demonstrating the basic concepts of how a serverless website would operate in a real-world environment.</p>
+
+    <h3>Key Features of the Prototype:</h3>
+    <ul>
+        <li>Static homepage content served via CDN</li>
+        <li>Product details and user authentication handled by serverless functions</li>
+        <li>Dynamic content rendering based on user interaction</li>
+        <li>Seamless integration with payment gateways via serverless APIs</li>
+    </ul>
+
+    <h3>Prototype Diagram:</h3>
+    <pre>
+    [User] -> [CDN: Static Content] -> [Serverless Backend: APIs, Database Access]
+        |                                    |
+        |---> [Edge Caching]              [Serverless Functions]
+    </pre>
+
+    <p>This architecture shows how serverless resources can handle all user interactions and dynamic content generation without requiring traditional servers.</p>
+</section>
+
+<section>
+    <h2>5. Conclusion</h2>
+    <p>By embracing serverless hosting, we can reduce infrastructure overhead, improve scalability, and enhance website performance while meeting the capacity demands of large-scale eCommerce platforms like Flipkart or Amazon. This solution is not only cost-effective but also flexible and adaptable to varying user traffic.</p>
+    <p>We believe this approach offers significant advantages, including reduced server maintenance, seamless scaling, and quicker deployment times.</p>
+</section>
+
+</body>
+</html>
