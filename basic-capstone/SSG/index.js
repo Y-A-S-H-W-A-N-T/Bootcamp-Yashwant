@@ -2,7 +2,7 @@ import { products } from './src/flipkart_products.js';
 import Fuse from 'fuse.js';
 
 const fuseOptions = {
-  keys: ["product_name", "description", "product_category_tree"],
+  keys: ["product_title", "description", "Category"],
   threshold: 0.4,
   distance: 100,
   includeScore: true,
@@ -25,9 +25,7 @@ let currentPage = 1;
 let filteredProducts = products;
 
 // Populate category filter
-const categories = [...new Set(products.flatMap(product => 
-  JSON.parse(product.product_category_tree).flat()
-))];
+const categories = [...new Set(products.map(product => product.Category))];
 
 categories.forEach(category => {
   const option = document.createElement('option');
@@ -44,18 +42,17 @@ function renderProducts(productList, page = 1) {
 
   productsContainer.innerHTML = "";
   pageProducts.forEach((product) => {
-    const image = JSON.parse(product.image)[0];
+    const image = product.Image_Urls.split('|')[0]; // Get the first image
     const description = product.description.slice(0, 100) + '...';
-    const rating = product.product_rating === "No rating available" ? "" : product.product_rating;
     const productCard = `
       <div class="product-card">
+        <img src="${image}" alt="${product.product_title}" class="product-image" />
         <div class="product-info">
-          <h3>${product.product_name}</h3>
+          <h3>${product.product_title}</h3>
           <p>${description}</p>
-          ${rating ? `<p class="rating"><i class="fas fa-star"></i> ${rating}</p>` : ""}
-          <p class="category"><i class="fas fa-tag"></i> ${JSON.parse(product.product_category_tree)[0]}</p>
-          <s class="retail-price">₹${product.retail_price}</s>
-          <p class="price-tag">₹${product.discounted_price}</p>
+          <p class="brand"><i class="fas fa-tag"></i> ${product.Brand}</p>
+          <s class="retail-price">₹${product.Mrp}</s>
+          <p class="price-tag">₹${product.Price}</p>
         </div>
       </div>
     `;
@@ -88,14 +85,14 @@ function filterAndSearchProducts() {
 
     // Apply price filter
     filteredProducts = filteredProducts.filter(product => {
-      const price = parseFloat(product.discounted_price);
+      const price = parseFloat(product.Price);
       return price >= minPrice && price <= maxPrice;
     });
 
     // Apply category filter
     if (selectedCategory) {
       filteredProducts = filteredProducts.filter(product => 
-        JSON.parse(product.product_category_tree).flat().includes(selectedCategory)
+        product.Category === selectedCategory
       );
     }
 
@@ -148,9 +145,9 @@ function showSearchSuggestions() {
   suggestions.forEach(({ item }) => {
     const suggestionElement = document.createElement("div");
     suggestionElement.classList.add("suggestion");
-    suggestionElement.textContent = item.product_name;
+    suggestionElement.textContent = item.product_title;
     suggestionElement.addEventListener("click", () => {
-      searchInput.value = item.product_name;
+      searchInput.value = item.product_title;
       searchSuggestions.innerHTML = "";
       filterAndSearchProducts();
     });
@@ -223,8 +220,6 @@ function hideLoading() {
   loadingIndicator.style.display = "none";
 }
 
-
-
 // Enhance the product cards with a "Quick View" feature
 function createQuickViewModal() {
   const modal = document.createElement("div");
@@ -249,20 +244,19 @@ const quickViewModal = createQuickViewModal();
 
 function showQuickView(product) {
   const details = quickViewModal.querySelector(".quick-view-details");
-  const images = JSON.parse(product.image);
+  const images = product.Image_Urls.split('|');
   details.innerHTML = `
-    <h2>${product.product_name}</h2>
+    <h2>${product.product_title}</h2>
     <div class="quick-view-images">
+      ${images.map(img => `<img src="${img}" alt="${product.product_title}" />`).join('')}
     </div>
     <p>${product.description}</p>
-    <p class="category"><i class="fas fa-tag"></i> ${JSON.parse(product.product_category_tree)[0]}</p>
-    <p class="price-card">₹${product.discounted_price}</p>
-    <button class="purchase"><a href="${product.product_url}"} target="_blank">Purchase</a></button>
+    <p class="brand"><i class="fas fa-tag"></i> ${product.Brand}</p>
+    <p class="price-card">₹${product.Price}</p>
+    <button class="purchase"><a href="https://www.amazon.in/dp/${product.Product_Asin}" target="_blank">Purchase</a></button>
   `;
   quickViewModal.style.display = "flex";
 }
 
-
 // Initialize the page
 renderProducts(products);
-
