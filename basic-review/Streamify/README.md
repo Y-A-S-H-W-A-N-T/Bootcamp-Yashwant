@@ -18,7 +18,7 @@ Spotify Research data based on its users and their liking towards each song and 
 A Static Web Application made using vanilla JavaScript, HTML, CSS and Vite. Focused on Spotify data, each song has numerous information about it. You can filter out songs using song name, artist, genre, popularity. A download button which download the filtered datsongs. Click on the play button to listen to that particular music.
   ****
 ## Deployment
-- **Hosted Link**: [Streamify](https://spotify-research-seven.vercel.app/)
+- **Hosted Link**: [Streamify](https://streamify-react.vercel.app/)
  ****
 
 ## Features
