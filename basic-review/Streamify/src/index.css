@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --spotify-green: #1db954;
+    --spotify-black: #191414;
+    --spotify-light-black: #282828;
+    --spotify-white: #FFFFFF;
+    --spotify-gray: #B3B3B3;
+}
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--spotify-black);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--spotify-light-black);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--spotify-green);
+  }
