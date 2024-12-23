@@ -49,7 +49,6 @@ function renderProducts(productList, page = 1) {
     const rating = product.product_rating === "No rating available" ? "" : product.product_rating;
     const productCard = `
       <div class="product-card">
-        <img class="product-image" src="http://${image}" alt="${product.product_name}">
         <div class="product-info">
           <h3>${product.product_name}</h3>
           <p>${description}</p>
@@ -254,7 +253,6 @@ function showQuickView(product) {
   details.innerHTML = `
     <h2>${product.product_name}</h2>
     <div class="quick-view-images">
-      ${images.map(img => `<img src="${img}" alt="${product.product_name}">`).join("")}
     </div>
     <p>${product.description}</p>
     <p class="category"><i class="fas fa-tag"></i> ${JSON.parse(product.product_category_tree)[0]}</p>
