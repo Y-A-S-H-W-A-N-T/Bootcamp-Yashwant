@@ -5,10 +5,9 @@
         "headers": [
           {
             "key": "Content-Security-Policy",
-            "value": "img-src http: https:;"
+            "value": "block-all-mixed-content; img-src http: https:;"
           }
         ]
       }
     ]
-  }
-  
+  }  
