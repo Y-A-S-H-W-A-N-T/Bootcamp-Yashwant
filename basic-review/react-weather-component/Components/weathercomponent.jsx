@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import { Search, Droplet, Wind } from 'lucide-react';
-import styles from './weathercomponent.module.css';
+import React, { useState } from "react";
+import { Search, Droplet, Wind } from "lucide-react";
+import styles from "./weathercomponent.module.css";
 
-const WeatherComponent = ({ apiKey, BG='linear-gradient(135deg, #6e8efb, #a777e3)' }) => {
-  const [city, setCity] = useState(''); // User-inputted city
+const WeatherComponent = ({
+  apiKey,
+  BG = "linear-gradient(135deg, #6e8efb, #a777e3)",
+}) => {
+  const [city, setCity] = useState(""); // User-inputted city
   const [weather, setWeather] = useState(null); // Weather data
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
@@ -19,10 +22,10 @@ const WeatherComponent = ({ apiKey, BG='linear-gradient(135deg, #6e8efb, #a777e3
         `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
       );
       if (!response.ok) {
-        throw new Error('City not found');
+        throw new Error("City not found");
       }
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setWeather(data);
     } catch (err) {
       setError(err.message);
@@ -33,13 +36,13 @@ const WeatherComponent = ({ apiKey, BG='linear-gradient(135deg, #6e8efb, #a777e3
 
   // Fetch weather when user presses "Enter"
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       fetchWeather();
     }
   };
 
   return (
-    <div className={styles.container} style={{background: BG}}>
+    <div className={styles.container} style={{ background: BG }}>
       <h1 className={styles.title}>Weather Forecast</h1>
       <div className={styles.searchContainer}>
         <input
@@ -62,7 +65,11 @@ const WeatherComponent = ({ apiKey, BG='linear-gradient(135deg, #6e8efb, #a777e3
         <div className={styles.weatherInfo}>
           <h2 className={styles.cityName}>{weather.location.name}</h2>
           <div className={styles.weatherMain}>
-            <img src={weather.current.condition.icon} alt="weather-icon" className={styles.weatherIcon} />
+            <img
+              src={weather.current.condition.icon}
+              alt="weather-icon"
+              className={styles.weatherIcon}
+            />
             <div className={styles.temperature}>
               <span className={styles.tempC}>{weather.current.temp_c}°C</span>
               <span className={styles.tempF}>{weather.current.temp_f}°F</span>
@@ -76,7 +83,9 @@ const WeatherComponent = ({ apiKey, BG='linear-gradient(135deg, #6e8efb, #a777e3
             </div>
             <div className={styles.detail}>
               <Wind size={20} />
-              <span>Wind: {weather.current.wind_kph} km/h {weather.current.wind_dir}</span>
+              <span>
+                Wind: {weather.current.wind_kph} km/h {weather.current.wind_dir}
+              </span>
             </div>
           </div>
         </div>

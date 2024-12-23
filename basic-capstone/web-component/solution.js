@@ -3,7 +3,7 @@ class WeatherComponent extends HTMLElement {
     super();
 
     // Attach shadow DOM
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
 
     // Define the structure of the weather component directly in JavaScript
     this.shadowRoot.innerHTML = `
@@ -113,18 +113,18 @@ class WeatherComponent extends HTMLElement {
     `;
 
     // Access elements inside the shadow DOM
-    this.cityInput = this.shadowRoot.querySelector('.city-input');
-    this.submitButton = this.shadowRoot.querySelector('.submit-button');
-    this.cityNameElem = this.shadowRoot.querySelector('.city-name');
-    this.descriptionElem = this.shadowRoot.querySelector('.description');
-    this.temperatureElem = this.shadowRoot.querySelector('.temperature');
+    this.cityInput = this.shadowRoot.querySelector(".city-input");
+    this.submitButton = this.shadowRoot.querySelector(".submit-button");
+    this.cityNameElem = this.shadowRoot.querySelector(".city-name");
+    this.descriptionElem = this.shadowRoot.querySelector(".description");
+    this.temperatureElem = this.shadowRoot.querySelector(".temperature");
 
     // Event listener for the submit button
-    this.submitButton.addEventListener('click', () => this.handleButtonClick());
+    this.submitButton.addEventListener("click", () => this.handleButtonClick());
   }
 
   async fetchWeather(city) {
-    const apiKey = 'b0b80ecb1ac34990a46201357242012';
+    const apiKey = "b0b80ecb1ac34990a46201357242012";
     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
     try {
@@ -132,8 +132,8 @@ class WeatherComponent extends HTMLElement {
       const data = await response.json();
 
       if (data.error) {
-        this.descriptionElem.textContent = 'City not found';
-        this.temperatureElem.textContent = '';
+        this.descriptionElem.textContent = "City not found";
+        this.temperatureElem.textContent = "";
       } else {
         const description = data.current.condition.text;
         const temperature = data.current.temp_c;
@@ -143,8 +143,8 @@ class WeatherComponent extends HTMLElement {
         this.temperatureElem.textContent = `${temperature}°C`;
       }
     } catch (error) {
-      this.descriptionElem.textContent = 'Error fetching weather';
-      this.temperatureElem.textContent = '';
+      this.descriptionElem.textContent = "Error fetching weather";
+      this.temperatureElem.textContent = "";
     }
   }
 
@@ -156,10 +156,10 @@ class WeatherComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    const defaultCity = this.getAttribute('city') || 'Los Angeles';
+    const defaultCity = this.getAttribute("city") || "Los Angeles";
     this.fetchWeather(defaultCity);
   }
 }
 
 // Define the custom element
-customElements.define('weather-component', WeatherComponent);
+customElements.define("weather-component", WeatherComponent);

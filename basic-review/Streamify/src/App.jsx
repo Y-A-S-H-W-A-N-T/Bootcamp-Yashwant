@@ -70,17 +70,18 @@ const App = () => {
   const endIndex = startIndex + itemsPerPage;
   const paginatedSongs = filteredSongs.slice(startIndex, endIndex);
 
-  const convertTime = (time)=>{
+  const convertTime = (time) => {
     const minutes = Math.floor(time / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  }
-  
+  };
 
   return (
     <div className=" mx-auto p-6 bg-gray-900 min-h-screen text-white">
       <header className="text-center mb-6">
-        <h1 className="text-4xl font-bold" style={{color: '#1db954'}}>Streamify</h1>
+        <h1 className="text-4xl font-bold" style={{ color: "#1db954" }}>
+          Streamify
+        </h1>
       </header>
       <div className="flex flex-wrap justify-center gap-4 mb-6">
         <Input
@@ -110,7 +111,9 @@ const App = () => {
         </Select>
         <Select
           className="border border-gray-700 bg-gray-800 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-500"
-          onValueChange={(value) => setFilters({ ...filters, popularity: value })}
+          onValueChange={(value) =>
+            setFilters({ ...filters, popularity: value })
+          }
           defaultValue=""
         >
           <SelectItem value="">All Popularity Levels</SelectItem>
@@ -119,8 +122,15 @@ const App = () => {
           <SelectItem value="average">Average</SelectItem>
           <SelectItem value="high">High</SelectItem>
         </Select>
-        <Button className="bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-400" onClick={exportData}>
-          Download Filtered Data<MdDownload size={20} className="ml-2 text-center items-center justify-center"/>
+        <Button
+          className="bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-400"
+          onClick={exportData}
+        >
+          Download Filtered Data
+          <MdDownload
+            size={20}
+            className="ml-2 text-center items-center justify-center"
+          />
         </Button>
       </div>
       <div className="flex justify-between items-center mt-6">
@@ -137,9 +147,14 @@ const App = () => {
         <button
           className="bg-gray-700 text-white px-4 py-2 rounded-lg disabled:opacity-50"
           onClick={() => handlePageChange(1)}
-          disabled={currentPage === Math.ceil(filteredSongs.length / itemsPerPage)}
+          disabled={
+            currentPage === Math.ceil(filteredSongs.length / itemsPerPage)
+          }
         >
-          <FaArrowCircleRight color="white" onClick={() => handlePageChange(1)}/>
+          <FaArrowCircleRight
+            color="white"
+            onClick={() => handlePageChange(1)}
+          />
         </button>
       </div>
       <div>
@@ -149,37 +164,58 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
             {paginatedSongs.map((song) => {
               const popularityCategory =
-              song.track_popularity <= 25
-                ? { label: "Low", color: "red" }
-                : song.track_popularity <= 50
-                ? { label: "Average", color: "yellow" }
-                : song.track_popularity <= 75
-                ? { label: "Medium", color: "orange" }
-                : { label: "High", color: "greenyellow" };
-                const time = convertTime(song.duration_ms)
-              return(
+                song.track_popularity <= 25
+                  ? { label: "Low", color: "red" }
+                  : song.track_popularity <= 50
+                  ? { label: "Average", color: "yellow" }
+                  : song.track_popularity <= 75
+                  ? { label: "Medium", color: "orange" }
+                  : { label: "High", color: "greenyellow" };
+              const time = convertTime(song.duration_ms);
+              return (
                 <div
                   key={song.track_id}
                   className="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition-shadow"
                 >
-                  <h3 className="text-xl font-bold">{song.track_name || "Untitled"}</h3>
-                  <p className="text-sm text-gray-400">by <strong className="text-lg">{song.track_artist || "Unknown Artist"}</strong></p>
-                  <p className="text-xl text-gray-400">{song.track_album_name || "Unknown Album"}</p>
-                  <p className="text-sm text-gray-400" style={{color: popularityCategory.color}}>{popularityCategory.label|| "Unknown"}</p>
-                  <p className="text-sm text-gray-400">{song.playlist_genre || "Unknown Genre"}</p>
+                  <h3 className="text-xl font-bold">
+                    {song.track_name || "Untitled"}
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    by{" "}
+                    <strong className="text-lg">
+                      {song.track_artist || "Unknown Artist"}
+                    </strong>
+                  </p>
+                  <p className="text-xl text-gray-400">
+                    {song.track_album_name || "Unknown Album"}
+                  </p>
+                  <p
+                    className="text-sm text-gray-400"
+                    style={{ color: popularityCategory.color }}
+                  >
+                    {popularityCategory.label || "Unknown"}
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    {song.playlist_genre || "Unknown Genre"}
+                  </p>
                   <div className="flex">
-                    <p className="flex mt-2" style={{color: '#1db954'}}><MdTimer size={20} className="mr-1"/>{time}</p>
-                    {song.track_id &&
-                    <a href={`https://open.spotify.com/track/${song.track_id}`} target="_blank"
-                      className="float-right mt-auto ml-auto"
-                      style={{color: '#1db954'}}
-                    >
-                      <IoIosPlayCircle size={60}/>
-                    </a>
-                    }
+                    <p className="flex mt-2" style={{ color: "#1db954" }}>
+                      <MdTimer size={20} className="mr-1" />
+                      {time}
+                    </p>
+                    {song.track_id && (
+                      <a
+                        href={`https://open.spotify.com/track/${song.track_id}`}
+                        target="_blank"
+                        className="float-right mt-auto ml-auto"
+                        style={{ color: "#1db954" }}
+                      >
+                        <IoIosPlayCircle size={60} />
+                      </a>
+                    )}
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         )}

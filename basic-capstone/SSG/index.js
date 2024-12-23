@@ -1,5 +1,5 @@
-import { products } from './src/flipkart_products.js';
-import Fuse from 'fuse.js';
+import { products } from "./src/flipkart_products.js";
+import Fuse from "fuse.js";
 
 const fuseOptions = {
   keys: ["product_title", "description", "Category"],
@@ -25,10 +25,10 @@ let currentPage = 1;
 let filteredProducts = products;
 
 // Populate category filter
-const categories = [...new Set(products.map(product => product.Category))];
+const categories = [...new Set(products.map((product) => product.Category))];
 
-categories.forEach(category => {
-  const option = document.createElement('option');
+categories.forEach((category) => {
+  const option = document.createElement("option");
   option.value = category;
   option.textContent = category;
   categoryFilter.appendChild(option);
@@ -42,8 +42,8 @@ function renderProducts(productList, page = 1) {
 
   productsContainer.innerHTML = "";
   pageProducts.forEach((product) => {
-    const image = product.Image_Urls.split('|')[0]; // Get the first image
-    const description = product.description.slice(0, 100) + '...';
+    const image = product.Image_Urls.split("|")[0]; // Get the first image
+    const description = product.description.slice(0, 100) + "...";
     const productCard = `
       <div class="product-card">
         <img src="${image}" alt="${product.product_title}" class="product-image" />
@@ -84,22 +84,22 @@ function filterAndSearchProducts() {
     filteredProducts = products;
 
     // Apply price filter
-    filteredProducts = filteredProducts.filter(product => {
+    filteredProducts = filteredProducts.filter((product) => {
       const price = parseFloat(product.Price);
       return price >= minPrice && price <= maxPrice;
     });
 
     // Apply category filter
     if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(product => 
-        product.Category === selectedCategory
+      filteredProducts = filteredProducts.filter(
+        (product) => product.Category === selectedCategory
       );
     }
 
     // Apply search filter
     if (searchTerm) {
       const searchResults = fuse.search(searchTerm);
-      filteredProducts = searchResults.map(result => result.item);
+      filteredProducts = searchResults.map((result) => result.item);
     }
 
     currentPage = 1;
@@ -189,9 +189,9 @@ function smoothScroll(target, duration) {
 
   function ease(t, b, c, d) {
     t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
+    if (t < 1) return (c / 2) * t * t + b;
     t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
   }
 
   requestAnimationFrame(animation);
@@ -209,7 +209,8 @@ nextPageBtn.addEventListener("click", () => {
 // Add a loading indicator
 const loadingIndicator = document.createElement("div");
 loadingIndicator.classList.add("loading-indicator");
-loadingIndicator.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+loadingIndicator.innerHTML =
+  '<i class="fas fa-spinner fa-spin"></i> Loading...';
 document.body.appendChild(loadingIndicator);
 
 function showLoading() {
@@ -244,16 +245,20 @@ const quickViewModal = createQuickViewModal();
 
 function showQuickView(product) {
   const details = quickViewModal.querySelector(".quick-view-details");
-  const images = product.Image_Urls.split('|');
+  const images = product.Image_Urls.split("|");
   details.innerHTML = `
     <h2>${product.product_title}</h2>
     <div class="quick-view-images">
-      ${images.map(img => `<img src="${img}" alt="${product.product_title}" />`).join('')}
+      ${images
+        .map((img) => `<img src="${img}" alt="${product.product_title}" />`)
+        .join("")}
     </div>
     <p>${product.description}</p>
     <p class="brand"><i class="fas fa-tag"></i> ${product.Brand}</p>
     <p class="price-card">₹${product.Price}</p>
-    <button class="purchase"><a href="https://www.amazon.in/dp/${product.Product_Asin}" target="_blank">Purchase</a></button>
+    <button class="purchase"><a href="https://www.amazon.in/dp/${
+      product.Product_Asin
+    }" target="_blank">Purchase</a></button>
   `;
   quickViewModal.style.display = "flex";
 }
