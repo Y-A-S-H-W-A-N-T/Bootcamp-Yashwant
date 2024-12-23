@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, Droplet, Wind } from 'lucide-react';
 import styles from './weathercomponent.module.css';
 
-const WeatherComponent = ({ apiKey }) => {
+const WeatherComponent = ({ apiKey, BG='linear-gradient(135deg, #6e8efb, #a777e3)' }) => {
   const [city, setCity] = useState(''); // User-inputted city
   const [weather, setWeather] = useState(null); // Weather data
   const [loading, setLoading] = useState(false); // Loading state
@@ -39,7 +39,7 @@ const WeatherComponent = ({ apiKey }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{background: BG}}>
       <h1 className={styles.title}>Weather Forecast</h1>
       <div className={styles.searchContainer}>
         <input

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #2d3748;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .highlight {
+            color: #FF6347;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 5px;
+        }
+        .task {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .task p {
+            margin: 5px 0;
+        }
+        code {
+            background-color: #aaa8a7;
+            font-size: 1rem;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>NOTES</h1>
+
+    <div class="section">
+        <h2>Exercise - 1: React Weather Component</h2>
+        <div class="task">
+            <h3>React Weather Component</h3>
+            <ol>
+                <li>A resuable react ui weather Component</li>     
+                <strong>It has 2 props out of which 1 is required (mandatory)</strong>     
+                    <li>apiKey - weather api (mandatory prop)</li>     
+                    <li>BG - background of the Component. Can be anything like image url, color gradien, hsl, rgb/rgba or any color (not mandatory)</li>     
+                </ol>
+        </div>
+        <div class="section">
+            <h2>Usage</h2>
+            <li>import the component</li>
+            <code>import WeatherComponent from '../Components/weathercomponent'</code>
+            <li>Use the UI component</li>
+            <code>&lt;WeatherComponent apiKey="b0b80ecb1ac34990a46201357242012"'/&gt;</code>
+            <code>&lt;WeatherComponent apiKey="b0b80ecb1ac34990a46201357242012" BG='linear-gradient(135deg, #6e8efb, #a777e3)'/&gt;</code>
+        </div>
+        <div class="section">
+            <h2>UI/UX</h2>
+            <img src="screenshots/1.jpeg" alt="ss" class="screenshot">
+            <img src="screenshots/2.jpeg" alt="ss" class="screenshot">
+            <img src="screenshots/5.jpeg" alt="ss" class="screenshot">
+            <img src="screenshots/6.jpeg" alt="ss" class="screenshot">
+        </div>
+        <div class="section">
+            <h2>How to Use</h2>
+            <img src="screenshots/3.jpeg" alt="ss" class="screenshot">
+            <img src="screenshots/4.jpeg" alt="ss" class="screenshot">
+        </div>
+        <div class="task">
+            <h3>LLM Links</h3>
+            <ul>
+                <li><a href="https://chatgpt.com/share/67697315-7bb0-8013-97f3-d50b5d648cf9">Chatgpt</a></li>
+                <li><a href="https://v0.dev/chat/cLevbO4N6HM?b=b_VesE3vrsas7">Vercel 0</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
