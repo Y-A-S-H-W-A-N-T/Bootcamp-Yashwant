@@ -49,7 +49,7 @@ function renderProducts(productList, page = 1) {
     const rating = product.product_rating === "No rating available" ? "" : product.product_rating;
     const productCard = `
       <div class="product-card">
-        <img class="product-image" src="${image}" alt="${product.product_name}">
+        <img class="product-image" src="http://${image}" alt="${product.product_name}">
         <div class="product-info">
           <h3>${product.product_name}</h3>
           <p>${description}</p>
