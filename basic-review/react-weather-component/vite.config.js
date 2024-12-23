@@ -5,7 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    // If you are running into issues with MIME type errors, try setting the following:
     mimeTypes: {
       '.js': 'application/javascript',
     },
