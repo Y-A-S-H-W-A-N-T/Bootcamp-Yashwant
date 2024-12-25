@@ -4,7 +4,8 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from 'lucide-react';
 
 export default function AboutDisease({ disease }) {
-  const Google_Gemini_API = "";
+  
+  const Google_Gemini_API = import.meta.env.VITE_GEMINI_API_KEY
   
   // Create an instance of the Generative AI model
   const genAI = new GoogleGenerativeAI(Google_Gemini_API);

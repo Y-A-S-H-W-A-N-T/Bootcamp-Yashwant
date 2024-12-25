@@ -33,9 +33,9 @@ const App = () => {
                   setDiseaseTree={setDiseaseTree}
                 />
               </div>
-              {/* <div className="transition-all duration-300 ease-in-out transform hover:scale-105">
+              <div className="transition-all duration-300 ease-in-out transform hover:scale-105">
                 <AboutDisease disease={selectedDisease} />
-              </div> */}
+              </div>
             </div>
             <div className="lg:col-span-1">
               {diseaseTree && (
