@@ -27,10 +27,9 @@ const DiseaseSearch = ({ onSelectDisease }) => {
     setLoading(true);
     setShowResults(true);
     try {
-      const response = await axios.get('/api/search', {
+      const response = await axios.get('https://www.ebi.ac.uk/ols4/api/search', {
         params: { q: query, ontology: 'efo' },
       });
-      console.log(response.data);
       setResults(response.data.response.docs);
     } catch (error) {
       console.error('Error fetching search results:', error);

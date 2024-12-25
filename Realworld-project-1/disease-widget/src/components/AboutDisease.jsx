@@ -29,7 +29,7 @@ export default function AboutDisease({ disease }) {
     {
       causes: []
     },
-    here,(DO NOT CHANGE THE FORMAT, FOLLOW THIS EVERYTIME). The data should be converted into object format using JSON.parse`;
+    here,(DO NOT CHANGE THE FORMAT, FOLLOW THIS EVERYTIME. Always send in this format no matter what). The data should be converted into object format using JSON.parse`;
 
     try {
       const result = await model.generateContent(prompt);
@@ -99,7 +99,10 @@ export default function AboutDisease({ disease }) {
           ))}
         </div>
       ) : (
-        <p className="text-center text-gray-500">No data available</p>
+        <>
+          <p className="text-center text-gray-500">No data available. </p>
+          <p className="text-center text-indigo-800 cursor-pointer" onClick={fetchData}>try again</p>
+        </>
       )}
     </div>
   );

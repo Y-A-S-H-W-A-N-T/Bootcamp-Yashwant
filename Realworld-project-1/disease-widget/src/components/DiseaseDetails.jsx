@@ -11,7 +11,7 @@ const DiseaseDetails = ({ disease, setDiseaseTree }) => {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `/api/ontologies/${disease.ontology_name}/terms`,
+          `https://www.ebi.ac.uk/ols4/api/ontologies/${disease.ontology_name}/terms`,
           {
             params: {
               id: disease.iri,
@@ -19,7 +19,6 @@ const DiseaseDetails = ({ disease, setDiseaseTree }) => {
           }
         );
         setDetails(data);
-        console.log(data?._embedded.terms[0]);
         setDiseaseTree(data?._embedded.terms[0]?._links);
       } catch (error) {
         console.error("Error fetching disease details:", error);
