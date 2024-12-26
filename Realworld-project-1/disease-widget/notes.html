@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #2d3748;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .highlight {
+            color: #FF6347;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 5px;
+        }
+        .task {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .task p {
+            margin: 5px 0;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            border: green 1px solid;
+            box-shadow: 0px 12px 15px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>NOTES</h1>
+
+    <div class="section">
+        <h2>Exercise - 1: Realworld Project (Disease Ontology Exploration)</h2>
+        <div class="task">
+            <h3>Approach</h3>
+            <ol>
+                <strong>Research and gathering resources</strong>
+                <li>Did research what exactly I have to build.</li>                
+                <li>Viewed the requirements with the perspective of a user.</li>                
+                <li>Gathered resources needed for the task/site. There was already an API which was providing all these details.</li>
+                <div>
+                    <img src="screenshots/1.jpeg" alt="ss" class="screenshot">
+                    <img src="screenshots/2.jpeg" alt="ss" class="screenshot">
+                    <img src="screenshots/3.jpeg" alt="ss" class="screenshot">
+                </div>
+                <li>Found that it provides all the parents and childrens of the disease in the response itself. Used it to construct the disease tree.</li>
+                <strong>Other Addons</strong>                
+                <li>Used Gemini API to fetch relevant data about the disease, such as : causes, precautions, diagnosis and many more.</li>                
+                <p>Note: Hit the try again button if the details about the disease isn't loaded.</p>
+                <img src="screenshots/4.jpeg" alt="ss" class="screenshot">  <br>            
+                <strong>User can perform the following tasks.</strong>
+                <ol>
+                    <li>Look for the Disease</li>
+                    <li>Check what are all the other disease related to it</li>
+                    <li>Get an understanding of the disease</li>
+                    <li>Gather other names of the disease</li>
+                    <li>Have a look at the hierarchy of the disease and pin point his current situation</li>
+                    <li>diagnosisGet general insights about the disease such as: causes, complications, precautions, symptoms etc.</li>
+                </ol>                
+            </ol>
+        </div>
+        <div class="section">
+            <h2>Website</h2>
+            <p><a href="https://disease-dictionary-nine.vercel.app/">Illness Encyclopedia</a></p>
+        </div>
+        <div class="section">
+            <h2>UI/UX</h2>
+            <img src="screenshots/5.jpeg" alt="ss" class="screenshot" style="height: 500px; width: 500px;">
+            <img src="screenshots/6.jpeg" alt="ss" class="screenshot" style="height: 500px; width: 500px;">
+            <img src="screenshots/7.jpeg" alt="ss" class="screenshot" style="height: 500px; width: 500px;">
+            <img src="screenshots/8.jpeg" alt="ss" class="screenshot" style="height: 500px; width: 500px;">
+        </div>
+        <div class="task">
+            <h3>LLM Links</h3>
+            <ul>
+                <li><a href="https://v0.dev/chat/kYJgJBHS0j4?b=b_MXEIFhmBspC">Vercel</a></li>
+                <li>Sorry, Chatgpt link wasn't available because I have used images in my chat</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
