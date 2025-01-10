@@ -2,11 +2,11 @@ import { GetServerSideProps } from 'next'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import { getProducts } from '../lib/api'
-import { Product } from '../types'
-import ProductCard from '../components/ProductCard'
-import SearchFilter from '../components/SearchFilter'
-import Pagination from '../components/Pagination'
+import { getProducts } from '../../lib/api'
+import { Product } from '../../types'
+import ProductCard from '../../components/ProductCard'
+import SearchFilter from '../../components/SearchFilter'
+import Pagination from '../../components/Pagination'
 
 interface ProductsPageProps {
   initialProducts: Product[]
