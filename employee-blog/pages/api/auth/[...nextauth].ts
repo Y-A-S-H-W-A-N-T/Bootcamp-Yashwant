@@ -3,8 +3,8 @@ import GoogleProvider from "next-auth/providers/google";
 import fs from "fs";
 import path from "path";
 
-const ALLOWED_DOMAINS = "gmail.com";
-const ALLOWED_EMAILS = "admin@example.com,employee@example.com";
+const ALLOWED_DOMAINS = process.env.ALLOWED_DOMAINS?.split(",") || [];
+const ALLOWED_EMAILS = process.env.ALLOWED_EMAILS?.split(",") || [];
 
 const createUserFolder = async (userEmail: string, userName: string) => {
   const userFolderPath = path.join(process.cwd(), 'people', userName.toLowerCase());
@@ -36,8 +36,8 @@ const createUserFolder = async (userEmail: string, userName: string) => {
 export const authOptions = {
   providers: [
     GoogleProvider({
-      clientId: '740553112201-di0uvj23p6saumfu14e564a5aa43eg2f.apps.googleusercontent.com',
-      clientSecret: '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',
+      clientId: process.env.CLIENT_ID || '',
+      clientSecret: process.env.CLIENT_SECRET || '',
     }),
   ],
   callbacks: {
