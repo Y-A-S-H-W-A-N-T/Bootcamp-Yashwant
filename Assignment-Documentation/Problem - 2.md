@@ -9,6 +9,13 @@ The goal is to build a foundational annotation system focused on modularity and 
 
 ---
 
+## Figma Prototype - [Prototype](https://www.figma.com/design/FjOYDzmsxpnn9Kc1oCAcah/Problem-Prototype?node-id=0-1&t=V4IhUIHnHI60vcI7-1)
+---
+
+### **Version 1: Authentication**
+- Implement authentication using Next.js Auth.js to secure user access.
+- Ensure role-based access control to manage permissions for annotations.
+
 ## **Users**
 - **Researchers and Analysts**: To annotate data collaboratively with AI systems.
 - **Data Scientists**: To analyze AI-generated observations and add context or corrections.
