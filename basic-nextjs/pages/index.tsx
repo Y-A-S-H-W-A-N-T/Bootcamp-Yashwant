@@ -67,6 +67,11 @@ const LinkData = [
     link: "https://yashwant-nextjs-ex-2.bootcamp.aganitha.ai"
   },
   {
+    title: "Crud App",
+    description: "Simple task management app using T3 nextjs, prisma, sqlite and tRPC",
+    link: "https://yashwant_t3.bootcamp.aganitha.ai/"
+  },
+  {
     title: "Product Dashboard using SSG,SSR and State management",
     description: "Simple products website made using static site generation and server side rendering. Using react context for saving favorites (State Management).",
     link: "https://yashwant-nextjs-ex-4.bootcamp.aganitha.ai"
