@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\n  \"app\": {},\n  \"appUsingSizeAdjust\": false,\n  \"pages\": {\n    \"/_app\": [\n      \"static/media/Geist_Variable-s.p.781b491f.woff2\"\n    ]\n  },\n  \"pagesUsingSizeAdjust\": true\n}"
