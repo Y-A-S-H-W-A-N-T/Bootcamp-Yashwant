@@ -1,5 +1,3 @@
-# Project Overview
-
 ## **Problem Definition**
 The goal is to build a foundational annotation system focused on modularity and extensibility. The system is designed to foster collaboration between AI and humans by capturing reviews and observations from AI tools. It should support various annotation methods, such as text comments, notes, and other flexible input forms. This project aims to address the following tasks:
 
@@ -24,6 +22,74 @@ The goal is to build a foundational annotation system focused on modularity and 
 ---
 
 ## **Plan**
+
+# Package Information
+Before diving into the project details, note that this project will be published as a reusable npm package:
+
+```bash
+# Install the package
+npm install @universal/annotation-system
+
+# or using yarn
+yarn add @universal/annotation-system
+```
+
+## Quick Usage
+Once installed, you can use the annotation system in your React/Next.js project:
+
+```tsx
+import { AnnotationSystem, AnnotationProvider } from '@universal/annotation-system';
+
+// Wrap your application with the provider
+function App() {
+  return (
+    <AnnotationProvider>
+      <YourComponents />
+    </AnnotationProvider>
+  );
+}
+
+// Use in your components
+function YourComponent() {
+  const componentData = {
+    metadata: {
+      title: "Document Section"
+    },
+    data: {
+      id: "unique-id",
+      type: "text",
+      displayType: "paragraph",
+      data: [
+        [{ content: "Your content here" }]
+      ]
+    }
+  };
+
+  return (
+    <AnnotationSystem
+      data={componentData}
+      onAnnotationCreate={(annotation) => {
+        console.log('New annotation:', annotation);
+      }}
+    />
+  );
+}
+```
+
+## Required Dependencies
+Make sure you have these peer dependencies installed:
+```json
+{
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@auth/nextjs": "^0.0.x",
+    "next": "^13.0.0"
+  }
+}
+```
+
+---
 
 ### **Version 1: Authentication**
 - Implement authentication using Next.js Auth.js to secure user access.
